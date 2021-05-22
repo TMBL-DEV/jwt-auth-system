@@ -16,9 +16,9 @@ mongoose
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
-    .then((res) => console.log("mongodb connected"))
+    .then(() => console.log("mongodb connected"))
     .catch((err) => console.log(err));
 // the routing
 app.use("/auth", authRoutes);
 // set the app on a port
-app.listen(5000, () => console.log("the pain has begun"));
+app.listen(process.env.APP_PORT, () => console.log(`${process.env.APP_NAME}`));
